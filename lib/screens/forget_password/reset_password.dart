@@ -28,10 +28,7 @@ class _ResetPasswordState extends State<ResetPassword> {
             screen: null,
           ),
         ],
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.arrow_back, size: 30),
-        ),
+      
       ),
       body: Container(
         margin: const EdgeInsets.all(20),
@@ -86,7 +83,9 @@ class _ResetPasswordState extends State<ResetPassword> {
                     style: ThemeText.boardingScreenBodysmall,
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      NavigationUtils.offScreen(context);
+                    },
                     child: Text(
                       'Login',
                       style: ThemeText.boardingScreenBodysmall
