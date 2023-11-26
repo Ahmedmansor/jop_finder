@@ -21,3 +21,4 @@ class ErrorLoginState extends LoginCubitState {
   ErrorLoginState({required this.message});
 }
 //! -------------------------
+class LogOutSucessState extends LoginCubitState {}
