@@ -37,7 +37,10 @@ class Profile extends StatelessWidget {
             // leading: ,
             actions: [
               GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                      LoginCubit.get(context).logOut();
+                    NavigationUtils.goToAndOff(context, const SplashScreen());
+                  },
                   child: Padding(
                     padding: const EdgeInsets.only(right: 8),
                     child: Image.asset(
