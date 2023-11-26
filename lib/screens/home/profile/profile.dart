@@ -108,7 +108,7 @@ class Profile extends StatelessWidget {
                       height: AppSettings.height * 0.01,
                     ),
                     Text(
-                      '46',
+                      '${MainCubit.get(context).appliedJobList.length}',
                       style:
                           ThemeText.boardingScreenBody.copyWith(fontSize: 25),
                       textAlign: TextAlign.center,
