@@ -72,10 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
             screen: null,
           ),
         ],
-        // leading: IconButton(
-        //   onPressed: () {},
-        //   icon: const Icon(Icons.arrow_back, size: 30),
-        // ),
+   
       ),
       body: loginBody(context),
     );
@@ -194,7 +191,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                                            NavigationUtils.goTo(context, ResetPassword());
+
+                    },
                     child: Text(
                       'Forget Password?',
                       style: ThemeText.boardingScreenBodysmall
