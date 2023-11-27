@@ -89,6 +89,7 @@ class AppRoot extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData.light(useMaterial3: true),
+
         home:
             token != null && token != '' ? HomeLayout() : const SplashScreen(),
         // home: ApplyJopUploadPortfolio(),
