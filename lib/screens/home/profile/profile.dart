@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jobsque_job_finder/cubits/cubit/cubit/main_cubit.dart';
 import 'package:jobsque_job_finder/repos/const.dart';
+import 'package:jobsque_job_finder/repos/shared_pref_helper.dart';
+import 'package:jobsque_job_finder/screens/Onboarding/presentation/boarding_view.dart';
+import 'package:jobsque_job_finder/screens/Onboarding/splash_screen.dart';
 import 'package:jobsque_job_finder/screens/home/profile/Login_and_security.dart';
 import 'package:jobsque_job_finder/screens/home/profile/cubit/profile_cubit.dart';
 import 'package:jobsque_job_finder/screens/home/profile/edit_profile.dart';
@@ -11,6 +15,7 @@ import 'package:jobsque_job_finder/screens/home/profile/others/help_center.dart'
 import 'package:jobsque_job_finder/screens/home/profile/others/privacy_and_policy.dart';
 import 'package:jobsque_job_finder/screens/home/profile/others/terms_and_conditions.dart';
 import 'package:jobsque_job_finder/screens/home/profile/portfolio.dart';
+import 'package:jobsque_job_finder/screens/signup/cubits/cubit/login_cubit_cubit.dart';
 import 'package:jobsque_job_finder/utils/app_setting.dart';
 import 'package:jobsque_job_finder/utils/navigation_util.dart';
 import 'package:jobsque_job_finder/widgets/custom_buttoms.dart';
@@ -37,7 +42,10 @@ class Profile extends StatelessWidget {
             // leading: ,
             actions: [
               GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    LoginCubit.get(context).logOut();
+                    NavigationUtils.goToAndOff(context, const SplashScreen());
+                  },
                   child: Padding(
                     padding: const EdgeInsets.only(right: 8),
                     child: Image.asset(
@@ -108,7 +116,7 @@ class Profile extends StatelessWidget {
                       height: AppSettings.height * 0.01,
                     ),
                     Text(
-                      '46',
+                      '${MainCubit.get(context).appliedJobList.length}',
                       style:
                           ThemeText.boardingScreenBody.copyWith(fontSize: 25),
                       textAlign: TextAlign.center,

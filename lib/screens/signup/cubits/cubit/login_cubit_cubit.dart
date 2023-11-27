@@ -54,4 +54,10 @@ class LoginCubit extends Cubit<LoginCubitState> {
       debugPrint(error.toString());
     });
   }
+
+  //logout
+  void logOut() {
+    CachMemory.deleteFromCachMemory(key: 'token');
+    emit(LogOutSucessState());
+  }
 }

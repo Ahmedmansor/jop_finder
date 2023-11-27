@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jobsque_job_finder/screens/signup/login_screen.dart';
 import 'package:jobsque_job_finder/utils/app_setting.dart';
+import 'package:jobsque_job_finder/utils/navigation_util.dart';
 import 'package:jobsque_job_finder/widgets/custom_buttoms.dart';
 
 import '../../repos/const.dart';
@@ -45,7 +47,9 @@ class YourAccountHasBeenSetUp extends StatelessWidget {
               Expanded(child: Container()),
               CustomGeneralButton(
                 text: 'Get Started',
-                onTap: () {},
+                onTap: () {
+                  NavigationUtils.goToAndOff(context, LoginScreen());
+                },
               )
             ],
           ),

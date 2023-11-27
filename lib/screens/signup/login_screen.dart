@@ -1,3 +1,4 @@
+import 'package:jobsque_job_finder/screens/forget_password/reset_password.dart';
 import 'package:jobsque_job_finder/screens/signup/cubits/cubit/login_cubit_cubit.dart';
 import 'package:jobsque_job_finder/screens/signup/widgets/login_buttons.dart';
 import 'package:jobsque_job_finder/widgets/social_media_raw.dart';
@@ -194,7 +195,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      NavigationUtils.goTo(context, ResetPassword());
+                    },
                     child: Text(
                       'Forget Password?',
                       style: ThemeText.boardingScreenBodysmall

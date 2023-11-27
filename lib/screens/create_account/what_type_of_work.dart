@@ -18,6 +18,9 @@ class WhatTypeOfWork extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: AppSettings.height * 0.1,
+            ),
             Text(
               'What type of work are you\ninterested in?',
               style: ThemeText.boardingScreenBody.copyWith(fontSize: 35),
@@ -48,9 +51,7 @@ class WhatTypeOfWork extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(
-              height: AppSettings.height * 0.04,
-            ),
+            Expanded(child: Container()),
             SizedBox(
               width: AppSettings.width,
               child: CustomGeneralButton(
@@ -91,10 +92,10 @@ class WhatTypeOfWork extends StatelessWidget {
                 AssetImage(cubit.icons[index]),
                 size: 50,
               ),
-              SizedBox(height: AppSettings.height * 0.02),
+              Expanded(child: Container()),
               Text(
                 cubit.iconsName[index],
-                style: ThemeText.iconsNameBold,
+                style: ThemeText.iconsNameBold.copyWith(fontSize: 13),
               ),
             ]),
           );

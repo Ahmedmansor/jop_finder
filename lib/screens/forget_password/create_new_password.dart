@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:jobsque_job_finder/components/appbar_logo.dart';
 import 'package:jobsque_job_finder/components/defult_material_button_gotoandoff.dart';
+import 'package:jobsque_job_finder/screens/signup/login_screen.dart';
 import 'package:jobsque_job_finder/utils/app_setting.dart';
+import 'package:jobsque_job_finder/utils/navigation_util.dart';
+import 'package:jobsque_job_finder/widgets/custom_buttoms.dart';
 
 import '../../repos/const.dart';
 
@@ -136,18 +139,11 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                 ],
               ),
             ),
-            Column(
-              children: [
-                SizedBox(height: AppSettings.height * 0.01),
-                SizedBox(
-                  width: AppSettings.width,
-                  child: DefultMaterialButtonGoToAndOff(
-                    Screen: null,
-                    text: 'Reset password ',
-                    color: Colors.blue[400],
-                  ),
-                ),
-              ],
+            CustomGeneralButton(
+              text: 'Reset password',
+              onTap: () {
+                NavigationUtils.goToAndOff(context, LoginScreen());
+              },
             ),
           ],
         ),

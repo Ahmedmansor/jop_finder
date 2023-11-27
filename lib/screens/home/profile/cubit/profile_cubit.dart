@@ -20,10 +20,10 @@ class ProfileCubit extends Cubit<ProfileState> {
     await DioHelper.dio
         .get(getprofileEndPoint,
             options: Options(headers: {
-              'Authorization': 'Bearer ${token!}',
+              'Authorization': 'Bearer ${token ?? ''}',
             }))
         .then((value) {
-      if (value.statusCode == 200) {
+      if (value.data['status'] == true) {
         debugPrint('200');
         profile = ProfileResponse.fromJson(value.data);
         debugPrint(profile!.data!.name);

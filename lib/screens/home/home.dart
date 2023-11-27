@@ -16,7 +16,6 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  @override
   Widget build(BuildContext context) {
     return BlocBuilder<MainCubit, MainState>(
       builder: (context, state) {
